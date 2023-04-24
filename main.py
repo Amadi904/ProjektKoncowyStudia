@@ -2,8 +2,7 @@ import random
 import time
 #Wylosować [10000] liczb całkowitych z zakresu: <65, 91>: zapisać w tablicy text
 
-def Losowanie():
-    text=[]
+def Losowanie(text):
     for i in range(10000):
         num = random.randint(65, 91)
         text.append(num)
@@ -21,20 +20,19 @@ def LiczbyLosowe():
     print(pattern)
     return pattern
 
-
-
-
-
 #Wyczyścić tablicę text z wartości [91] za pmocą:
 #Copy-over algorithm
 def CopyOver(unique_data):
-    unique_data = []
-    for i in range(len(test)):
-        if test[i] not in unique_data:
-            unique_data.append(test[i])
+    TablicaPosortowana = []
+    for i in range(len(tablica)):
+        if tablica[i] !=91:
+            TablicaPosortowana.append(tablica[i])
     print("Dane po zastosowaniu algorytmu Copy Over:")
-    print(unique_data)
-    return unique_data
+    print(TablicaPosortowana)
+    return TablicaPosortowana
+
+
+
 #Converging pointers algorithm
 def converging_pointers_sort(arr):
     n = len(arr)
@@ -167,7 +165,7 @@ def kmp_search(text, pattern):
     end = time.time()
 if __name__ == "__main__":
 
-    test=[1,2,3,5,2,3,1]
-    Los=Losowanie()
+    tablica=[]
+    Los=Losowanie(tablica)
     LIczbylosowe=LiczbyLosowe()
-    sortowanie=CopyOver(test)
+    sortowanie=CopyOver(tablica)
